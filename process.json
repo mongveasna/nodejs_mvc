@@ -1,0 +1,22 @@
+{
+    "apps": [{
+        "name": "api",
+        "script": "./index.js",
+        "max_memory_restart": "1500M",
+        "watch": ["middleware", "lib", "route", "model", "index.js", "config"],
+        "ignore_watch" : ["node_modules", "var", "storage", "doc", "public", ".git", "view", "cmd", "test"],
+        "instances": "1",
+        "merge_logs": true,
+        "out_file": "var/debug.out.log",
+        "error_file": "var/debug.err.log",
+        "exec_mode": "cluster",
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "env": {
+            "DEBUG": "api:*",
+            "DEBUG_OUTPUT": "var/debug.log"
+        },
+        "env_production": {
+            "DEBUG": ""
+        }
+    }]
+}

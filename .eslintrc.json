@@ -1,0 +1,27 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 8,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "no-case-declarations": "off",
+        "yoda": "warn",
+        "no-trailing-spaces": "error",
+        "comma-dangle": "warn",
+        "object-shorthand": "error"
+    }
+}

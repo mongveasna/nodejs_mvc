@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- /.website title -->
+    <title>Welcome to Node Js MVC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Colors -->
+    <link href="css/css-index.css" rel="stylesheet" media="screen">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic"
+    />
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar-scroll">
+
+    <!-- /.preloader -->
+    <div id="preloader"></div>
+    <div id="top"></div>
+
+    <!-- /.parallax full screen background image -->
+    <div class="fullscreen landing parallax" style="background-image:url('images/bg.jpg');" data-img-width="2000" data-img-height="1333"
+        data-diff="100">
+        <h1>Welcome to MVC Framework</h1>
+    </div>
+
+    <!-- /.javascript files -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io('http://localhost:8080/sale');
+        socket.on('connect', function (data, callcack) { 
+            console.log("connected ================================ ", data);
+            socket.emit('message', 'Hello world');
+        });
+        socket.on('event', function (data) { });
+        socket.on('disconnect', function () {
+
+         });
+         socket.on("message", function(data){
+             console.log("new message ==============================");
+             console.log(data);
+         })
+    </script>
+</body>
+
+</html>
