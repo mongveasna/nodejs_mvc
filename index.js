@@ -1,17 +1,19 @@
 #!/bin/bash
-
 const cls = require('continuation-local-storage');
 require('dotenv').config();
 
 const core = {};
+global.CORE = core;
+
 const domain = require("domain");
 const fs = require("fs");
 let models = require("./lib/model");
-let contorllers = require("./lib/controller");
+const utils = require("./lib/utils.js");
+core.UTILS = utils;
 const logger = require("./lib/logger")("index");
 // Load all model
 core.MODEL = models;
-
+let contorllers = require("./lib/controller");
 // Load all controllers
 core.CONTROLLER = contorllers;
 // init configuration
@@ -23,8 +25,6 @@ const {
     app: appConfig
 } = core.CONFIG;
 core.HELPER =  require("./lib/helper");
-global.CORE = core;
-
 if (appConfig.redis) {
     core.REDIS = require("./lib/redis");
 }

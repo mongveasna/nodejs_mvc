@@ -11,6 +11,10 @@
             "experimentalObjectRestSpread": true
         }
     },
+    "globals": {
+        "CORE": true,
+        "CONSTANT": true
+    },
     "rules": {
         "semi": [
             "error",

@@ -1,10 +1,10 @@
 module.exports = {
     host: "127.0.0.1",
-    port: "5432",
-    database: "test",
-    username: "postgres",
-    password: "superme",
-    dialect: 'postgres',
+    port: "3306",
+    database: "",
+    username: "",
+    password: "",
+    dialect: 'mysql',
     logging: true,
     pool: {
         max: 100,

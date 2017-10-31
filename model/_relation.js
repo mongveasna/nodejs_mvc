@@ -1,24 +1,11 @@
 module.exports = function (models) {
-    // const {
-    //     Auth,
-    //     AuthSecurity,
-    //     AuthToken,
-    //     Fee,
-    //     Journal,
-    //     JournalItem,
-    //     NumberRange,
-    //     Profile,
-    //     Transaction,
-    //     TransactionType,
-    //     TransactionTypeFee,
-    //     Wallet,
-    //     WalletLog,
-    //     WalletType,
-    //     WalletTypePermission
-    // } = models;
+    const {
+        user_token,
+        user,
+    } = models;
 
-    // Wallet.hasMany(Fee, { foreignKey: 'third_party_wallet_number', sourceKey: 'wallet_number' });
-    // Fee.belongsTo(Wallet, { foreignKey: 'third_party_wallet_number', targetKey: 'wallet_number' });
+    user.hasOne(user_token, { foreignKey: 'user_id'});
+    user_token.belongsTo(user, { foreignKey: 'user_id'});
 
     // NumberRange.hasMany(Journal, { foreignKey: 'number_range_code', sourceKey: 'code' });
     // Journal.belongsTo(NumberRange, { foreignKey: 'number_range_code', targetKey: 'code' });

@@ -1,7 +1,7 @@
 
 module.exports = {
     async landing(ctx, next) {
-        await ctx.render("index", {});
+        await ctx.render("index", {})
     },
     async admin(ctx, next) {
         await ctx.render("admin", {});
