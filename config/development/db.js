@@ -5,7 +5,7 @@ module.exports = {
     username: "",
     password: "",
     dialect: 'mysql',
-    logging: false,
+
     pool: {
         max: 100,
         min: 1,
@@ -14,5 +14,6 @@ module.exports = {
     define: {
         underscored: true,
         freezeTableName: true
-    }
+    },
+    operatorsAliases: false
 };

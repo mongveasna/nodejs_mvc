@@ -1,11 +1,11 @@
 module.exports = {
     host: "127.0.0.1",
     port: "3306",
-    database: "test",
-    username: "=",
+    database: "",
+    username: "",
     password: "",
-    dialect: 'postgres',
-    logging: false,
+    dialect: 'mysql',
+
     pool: {
         max: 100,
         min: 1,
@@ -14,5 +14,6 @@ module.exports = {
     define: {
         underscored: true,
         freezeTableName: true
-    }
+    },
+    operatorsAliases: false
 };

@@ -66,7 +66,6 @@ const handler = function (req, res, app) {
     d.add(req);
     d.add(res);
     d.add(app);
-
     // Now run the handler function in the domain.
     d.run(function () {
         app(req, res);
@@ -74,12 +73,10 @@ const handler = function (req, res, app) {
 };
 
 let server = null;
-
 if (appConfig.ssl) {
     const https = require("https");
     const privateKey = fs.readFileSync(appConfig.ssl.key, "utf8");
     const certificate = fs.readFileSync(appConfig.ssl.cert, "utf8");
-
     const credentials = {
         key: privateKey,
         cert: certificate
