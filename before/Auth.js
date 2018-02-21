@@ -1,10 +1,12 @@
 
 let Auth = {};
 const logger = require("../lib/logger")("koa");
-const assert = require("assert")
-
+const model = CORE.model;
 Auth.loginRequired = async function (ctx) {
-    ASSERT(ctx.user,"Wrong value", 500);
+    // ASSERT(0, 999,403);
+    // console.log(user.dataValues);
+    // ctx.success(user.dataValues);
+    // ASSERT(ctx.user,"Invalid Token", 500);
 };
 
 module.exports = Auth;
