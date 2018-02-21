@@ -5,7 +5,7 @@ module.exports = {
     username: "",
     password: "",
     dialect: 'mysql',
-    logging: false,
+
     pool: {
         max: 100,
         min: 1,

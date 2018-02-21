@@ -1,9 +1,24 @@
 #!/bin/bash
 const cls = require('continuation-local-storage');
 require('dotenv').config();
-
 const core = {};
 global.CORE = core;
+//Init Custom Error
+// Create a new object, that prototypally inherits from the Error constructor.
+function customError(message, code) {
+  this.name = 'MyError';
+  this.message = message || 'Default Message';
+  this.code = code;
+}
+customError.prototype = Object.create(customError.prototype);
+customError.prototype.constructor = customError;
+
+function assert(status, message, code){
+    if(!status){
+        throw new customError("Wrong value", code);
+    }
+}
+global.ASSERT = assert;
 
 const domain = require("domain");
 const fs = require("fs");
@@ -28,7 +43,11 @@ core.HELPER =  require("./lib/helper");
 if (appConfig.redis) {
     core.REDIS = require("./lib/redis");
 }
+
+// init default app
 const app = require("./lib/koa");
+//fetch routers 
+require("./lib/router")(app);
 // run every request handler inside a domain controller
 const handler = function (req, res, app) {
     const d = domain.create();

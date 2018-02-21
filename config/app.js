@@ -4,11 +4,11 @@ module.exports = {
     ssl: null,
     viewCache: false,
     dbsync: false,
-    encryptionKey: "99",
+    encryptionKey: "idjf!G4542Y75xtwEAVo2m",
     sessionSecret: "22",
-    jwtSecret: "33",
-    socket: true,
-    redis: true,
+    jwtSecret: "94!93hG4542Y75xtwEAVo2m",
+    socket: false,
+    redis: false,
     compress: {
         filter: (content_type) => {
             return /text/i.test(content_type);

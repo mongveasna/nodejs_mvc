@@ -16,6 +16,12 @@ module.exports = {
             handler: "user@onLogin",
             path: "/login",
             method: "POST"
+        },
+        {
+            before: ['Auth@loginRequired'],
+            handler: "user@testToken",
+            path: "/test",
+            method: "POST"
         }
     ]
 }
